@@ -1,0 +1,78 @@
+{
+  "name": "hardhat-ethers-waffle-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "author": {
+    "name": "oxdog"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "analyseRarity": "npx hardhat run --network rinkeby scripts/utils/analyseRarity.ts",
+    "build": "npm run compile",
+    "commit": "git-cz",
+    "compile": "npx hardhat compile",
+    "prod_contingent": "npx hardhat run --network mainnet scripts/controllers/issueContingent.ts",
+    "prod_deployFreeMint": "npx hardhat run --network mainnet scripts/utils/deployFreeMint.ts",
+    "prod_deployPhase0": "npx hardhat run --network mainnet scripts/utils/deployPhase0.ts",
+    "prod_deployPhase1": "npx hardhat run --network mainnet scripts/utils/deployPhase1.ts",
+    "prod_deployPhase2": "npx hardhat run --network mainnet scripts/utils/deployPhase2.ts",
+    "prod_reveal": "npx hardhat run --network mainnet scripts/controllers/reveal.ts",
+    "prod_togglePharmacyPause": "npx hardhat run --network mainnet scripts/controllers/togglePharmacyPause.ts",
+    "prod_update_wl": "npx hardhat run --network mainnet scripts/controllers/setRootHash.ts",
+    "release": "standard-version",
+    "test_contingent": "npx hardhat run --network rinkeby scripts/controllers/issueContingent.ts",
+    "test_deployPhase0": "npx hardhat run --network rinkeby scripts/fork/test_deployPhase0.ts",
+    "test_deployPhase1": "npx hardhat run --network rinkeby scripts/utils/deployPhase1.ts",
+    "test_deployPhase2": "npx hardhat run --network rinkeby scripts/utils/deployPhase2.ts",
+    "test_reveal": "npx hardhat run --network rinkeby scripts/controllers/reveal.ts",
+    "test_togglePharmacyPause": "npx hardhat run --network rinkeby scripts/controllers/togglePharmacyPause.ts",
+    "test_update_wl": "npx hardhat run --network rinkeby scripts/controllers/setRootHash.ts",
+    "test": "npx hardhat test",
+    "upload": "npx hardhat run --network rinkeby scripts/utils/upload.ts",
+    "uploadStatic": "npx hardhat run --network rinkeby scripts/utils/uploadStatic.ts",
+    "provenance": "npx hardhat run --network rinkeby scripts/utils/provenance.ts",
+    "rarity": "npx hardhat run --network rinkeby scripts/utils/analyseRarity.ts",
+    "genSizes": "npx hardhat run --network rinkeby scripts/utils/genSizesMeta.ts",
+    "fork": "npx hardhat node --fork https://eth-mainnet.alchemyapi.io/v2/Dj-N5i1XtEgrGxst4mY711jN4jHAOizt",
+    "fork_mint": "npx hardhat run --network fork scripts/controllers/mint.ts",
+    "fork_deploy": "npx hardhat run --network fork scripts/fork/fork_dp0.ts"
+  },
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.3.2",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@typechain/ethers-v5": "^8.0.3",
+    "@typechain/hardhat": "^3.0.0",
+    "@types/chai-as-promised": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.19",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.1",
+    "hardhat": "^2.6.8",
+    "hardhat-contract-sizer": "^2.5.1",
+    "hardhat-gas-reporter": "^1.0.8",
+    "ts-generator": "^0.1.1",
+    "ts-node": "^10.4.0",
+    "typechain": "^6.0.3",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.3",
+    "@openzeppelin/contracts": "^4.4.0",
+    "dotenv": "^10.0.0",
+    "git-cz": "^4.8.0",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.31",
+    "moment": "^2.29.1",
+    "moralis": "^1.1.0",
+    "standard-version": "^9.3.2"
+  },
+  "engines": {
+    "node": "16.13.1"
+  }
+}
